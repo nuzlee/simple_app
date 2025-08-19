@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_app/utils/components/custom_appbar.dart';
 import 'package:simple_app/utils/components/custom_listtile.dart';
-import 'package:simple_app/utils/components/custom_navbar.dart';
+// import 'package:simple_app/utils/components/custom_navbar.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
