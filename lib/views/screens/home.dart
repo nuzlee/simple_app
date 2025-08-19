@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_app/utils/components/custom_appbar.dart';
+import 'package:simple_app/utils/components/custom_listtile.dart';
+import 'package:simple_app/utils/components/custom_navbar.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -74,95 +76,15 @@ class _HomeState extends State<Home> {
                           children: [
                             ListView(
                               children: [
-                                Container(
-                                  margin: EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    color: Colors.yellow,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: ListTile(
-                                    title: Text('Kedai Makan ABC'),
-                                    subtitle: Text('18/8/2025'),
-                                    trailing: Text(
-                                      'RM 50.00',
-                                      style: TextStyle(fontSize: 20),
-                                    ),
-                                  ),
+                                CustomListtile(
+                                  title: 'Submit Application Form',
+                                  subtitle: 'Form Sample ABC',
+                                  trailing: '19/8/2025',
                                 ),
-                                Container(
-                                  margin: EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    color: Colors.yellow,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: ListTile(
-                                    title: Text('Kedai Makan ABC'),
-                                    subtitle: Text('18/8/2025'),
-                                    trailing: Text(
-                                      'RM 50.00',
-                                      style: TextStyle(fontSize: 20),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    color: Colors.yellow,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: ListTile(
-                                    title: Text('Kedai Makan ABC'),
-                                    subtitle: Text('18/8/2025'),
-                                    trailing: Text(
-                                      'RM 50.00',
-                                      style: TextStyle(fontSize: 20),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    color: Colors.yellow,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: ListTile(
-                                    title: Text('Kedai Makan ABC'),
-                                    subtitle: Text('18/8/2025'),
-                                    trailing: Text(
-                                      'RM 50.00',
-                                      style: TextStyle(fontSize: 20),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    color: Colors.yellow,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: ListTile(
-                                    title: Text('Kedai Makan ABC'),
-                                    subtitle: Text('18/8/2025'),
-                                    trailing: Text(
-                                      'RM 50.00',
-                                      style: TextStyle(fontSize: 20),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    color: Colors.yellow,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: ListTile(
-                                    title: Text('Kedai Makan ABC'),
-                                    subtitle: Text('18/8/2025'),
-                                    trailing: Text(
-                                      'RM 50.00',
-                                      style: TextStyle(fontSize: 20),
-                                    ),
-                                  ),
+                                CustomListtile(
+                                  title: 'Attend Event ABC',
+                                  subtitle: 'At PICC',
+                                  trailing: '20/8/2025',
                                 ),
                               ],
                             ),
@@ -178,16 +100,7 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          // BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-          BottomNavigationBarItem(icon: Icon(Icons.note), label: 'Form'),
-        ],
-      ),
+      bottomNavigationBar: CustomNavbar(),
     );
   }
 }
