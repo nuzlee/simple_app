@@ -18,7 +18,14 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: screens[currentIndex],
-      bottomNavigationBar: CustomNavbar(),
+      bottomNavigationBar: CustomNavbar(
+        onTap: (value) {
+          setState(() {
+            //buat perubahan screen (digunakan dlm stateful widget sahaja)
+            currentIndex = value;
+          });
+        },
+      ),
     );
   }
 }
