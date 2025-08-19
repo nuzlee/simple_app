@@ -25,6 +25,7 @@ class _MainScreenState extends State<MainScreen> {
             currentIndex = value;
           });
         },
+        currentIndex: currentIndex,
       ),
     );
   }
