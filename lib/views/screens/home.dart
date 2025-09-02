@@ -135,6 +135,19 @@ class _HomeState extends State<Home> {
                                     );
                                   },
                                 ),
+                                ListView.builder(
+                                  itemCount: incompletedTasksList.length,
+                                  itemBuilder: (context, index) {
+                                    return CustomListtile(
+                                      title:
+                                          incompletedTasksList[index]['task_title'],
+                                      subtitle:
+                                          incompletedTasksList[index]['task_desc'],
+                                      trailing:
+                                          incompletedTasksList[index]['task_status'],
+                                    );
+                                  },
+                                ),
                                 Center(child: Text('Missed')),
                               ],
                             ),
