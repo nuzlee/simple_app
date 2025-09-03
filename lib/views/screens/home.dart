@@ -83,7 +83,7 @@ class _HomeState extends State<Home> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'Welcome, User!',
+                            'Welcome, $userId!',
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
