@@ -6,6 +6,7 @@ import 'package:simple_app/utils/routes/api.dart';
 Future<Map<String, dynamic>> getTasks() async {
   try {
     final response = await http.get(Uri.parse(Api.getTasksSteven));
+    // final response = await http.get(Uri.parse(Api.getTasksMicheal));
     // print(response.body);
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
@@ -27,11 +28,7 @@ Future<Map<String, dynamic>> postFormCreateTask(
 
     final response = await http.post(
       url,
-      body: {
-        'user_id': userId,
-        'task_title': taskTitle,
-        'task_description': taskDesc,
-      },
+      body: {'user_id': userId, 'task_title': taskTitle, 'task_desc': taskDesc},
     );
     if (response.statusCode == 200) {
       return jsonDecode(response.body);

@@ -37,13 +37,13 @@ class _HomeState extends State<Home> {
 
     status = result['success'];
     tasksList = result['tasks'];
-    tasksList.forEach((task) {
+    for (var task in tasksList) {
       if (task['task_status'] == 'ACTIVE') {
         activeTasksList.add(task);
       } else if (task['task_status'] == 'INCOMPLETE') {
         incompletedTasksList.add(task);
       }
-    });
+    }
     userId = result['user_id'];
 
     setState(() {
