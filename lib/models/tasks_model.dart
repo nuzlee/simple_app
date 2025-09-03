@@ -16,3 +16,29 @@ Future<Map<String, dynamic>> getTasks() async {
     return {};
   }
 }
+
+Future<Map<String, dynamic>> postFormCreateTask(
+  userId,
+  taskTitle,
+  taskDesc,
+) async {
+  try {
+    Uri url = Uri.parse(Api.postFormCreateTask);
+
+    final response = await http.post(
+      url,
+      body: {
+        'user_id': userId,
+        'task_title': taskTitle,
+        'task_description': taskDesc,
+      },
+    );
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body);
+    } else {
+      return {};
+    }
+  } catch (e) {
+    return {};
+  }
+}
