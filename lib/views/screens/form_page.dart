@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:simple_app/models/tasks_model.dart';
 import 'package:simple_app/utils/components/custom_appbar.dart';
+import 'package:simple_app/utils/state_management/userdata_provider.dart';
 
 class FormPage extends StatefulWidget {
   const FormPage({super.key});
@@ -16,6 +18,15 @@ class _FormPageState extends State<FormPage> {
   TextEditingController taskTitleController = TextEditingController();
   TextEditingController taskDescController = TextEditingController();
   bool isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    userIdController.text = Provider.of<UserDataProvider>(
+      context,
+      listen: false,
+    ).userId;
+  }
 
   Future<void> submitForm() async {
     setState(() {

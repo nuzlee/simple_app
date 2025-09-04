@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:simple_app/models/tasks_model.dart';
 import 'package:simple_app/utils/components/custom_appbar.dart';
 import 'package:simple_app/utils/components/custom_listtile.dart';
+import 'package:simple_app/utils/state_management/userdata_provider.dart';
 // import 'package:simple_app/utils/components/custom_navbar.dart';
 
 class Home extends StatefulWidget {
@@ -45,6 +47,7 @@ class _HomeState extends State<Home> {
       }
     }
     userId = result['user_id'];
+    Provider.of<UserDataProvider>(context, listen: false).setUserId(userId);
 
     setState(() {
       isLoading = false;
@@ -148,7 +151,7 @@ class _HomeState extends State<Home> {
                                     );
                                   },
                                 ),
-                                Center(child: Text('Missed')),
+                                // Center(child: Text('Missed')),
                               ],
                             ),
                           ),
